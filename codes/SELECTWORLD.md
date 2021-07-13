@@ -42,7 +42,6 @@ WHERE name LIKE 'United%' ;
 </br>
 
 7.Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.
-
 Show the countries that are big by area or big by population. Show name, population and area.
 ```
 SELECT name, population, area FROM world
@@ -84,3 +83,29 @@ SELECT name,capital FROM world
 WHERE LENGTH(name) = LENGTH(capital) ;
 ```
 </br>
+
+12.The capital of Sweden is Stockholm. Both words start with the letter 'S'.
+Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
+You can use the function LEFT to isolate the first character.You can use <> as the NOT EQUALS operator.
+```
+SELECT name, capital FROM world
+WHERE LEFT(name,1) = LEFT(capital,1)
+AND name != capital ;
+```
+</br>
+
+13.Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.
+Find the country that has all the vowels and no spaces in its name.
+You can use the phrase name NOT LIKE '%a%' to exclude characters from your results.
+The query shown misses countries like Bahamas and Belarus because they contain at least one 'a'
+```
+SELECT name FROM world
+WHERE name LIKE '%A%'
+ AND name LIKE '%E%'
+ AND name LIKE '%I%'
+ AND name LIKE '%O%'
+ AND name LIKE '%U%'
+ AND name NOT LIKE '% %' ;
+
+```
+
