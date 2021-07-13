@@ -9,5 +9,5 @@ SELECT name, continent, population FROM world;
 ```
 SELECT name
   FROM world
- WHERE population > 1000000000
+ WHERE population >= 200000000
 ```
