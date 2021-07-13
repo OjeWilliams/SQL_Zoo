@@ -31,25 +31,34 @@ WHERE continent = 'South America';
 ```
 SELECT name, population FROM world
 WHERE name in ('France','Germany','Italy') ;
+```
+</br>
 
+6.Show the countries which have a name that includes the word 'United'
+```
+SELECT name FROM world
+WHERE name LIKE 'United%' ;
+```
+</br>
+
+7.Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.
+
+Show the countries that are big by area or big by population. Show name, population and area.
+```
+SELECT name, population, area FROM world
+WHERE population > 250000000 
+OR area > 3000000 ;
 ```
 
 </br>
 
+8.Exclusive OR (XOR). Show the countries that are big by area (more than 3 million) or big by population (more than 250 million) but not both. Show name, population and area.
 
-
-
-
-</br>
-
-
-
-
-
-</br>
-
-
-
+```
+SELECT name, population, area FROM world
+WHERE (population > 250000000 AND area < 3000000)
+OR (population < 250000000 AND area > 3000000) ;
+```
 
 
 </br>
