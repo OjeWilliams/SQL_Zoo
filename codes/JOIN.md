@@ -42,7 +42,7 @@ WHERE teamid = 'GER' ;
 ```
 </br>
 
-4. Use the same JOIN as in the previous question. </br>
+4.Use the same JOIN as in the previous question. </br>
 Show the team1, team2 and player for every goal scored by a player called Mario player LIKE 'Mario%'
 ```
 SELECT team1, team2, player FROM game 
@@ -63,8 +63,7 @@ WHERE gtime<=10
 ```
 </br>
 
-6.
-To JOIN game with eteam you could use either
+6.To JOIN game with eteam you could use either
 game JOIN eteam ON (team1=eteam.id) or game JOIN eteam ON (team2=eteam.id)
 Notice that because id is a column name in both game and eteam you must specify eteam.id instead of just id </br>
 List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.
@@ -74,11 +73,14 @@ Join eteam ON eteam.id = game.team1
 WHERE coach =  'Fernando Santos'
 ;
 ```
-
 </br>
 
+7.List the player for every goal scored in a game where the stadium was 'National Stadium, Warsaw'
 ```
-
+SELECT player FROM game
+Join goal ON game.id = goal.matchid
+WHERE stadium =  'National Stadium, Warsaw'
+;
 ```
 
 
