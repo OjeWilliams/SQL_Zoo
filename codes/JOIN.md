@@ -2,7 +2,7 @@
 The tables contain all matches and goals from UEFA EURO 2012 Football Championship in Poland and Ukraine. </br>
 The data is available (mysql format) at http://sqlzoo.net/euro2012.sql
 
-1. The first example shows the goal scored by a player with the last name 'Bender'. The * says to list all the columns in the table - a shorter way of saying matchid, teamid, player, gtime </br>
+1.The first example shows the goal scored by a player with the last name 'Bender'. The * says to list all the columns in the table - a shorter way of saying matchid, teamid, player, gtime </br>
 Modify it to show the matchid and player name for all goals scored by Germany. To identify German players, check for: teamid = 'GER'
 </br>
 
@@ -12,7 +12,7 @@ SELECT matchid, player FROM goal
 ```
 </br>
 
-2. From the previous query you can see that Lars Bender's scored a goal in game 1012. Now we want to know what teams were playing in that match.
+2.From the previous query you can see that Lars Bender's scored a goal in game 1012. Now we want to know what teams were playing in that match.
 Notice that the matchid column in the goal table corresponds to the id column in the game table. We can look up information about game 1012 by finding that row in the game table. </br>
 Show id, stadium, team1, team2 for just game 1012
 
@@ -25,7 +25,7 @@ WHERE id = 1012 ;
 
 </br>
 
-3. You can combine the two steps into a single query with a JOIN.
+3.You can combine the two steps into a single query with a JOIN.
 SELECT *
   FROM game JOIN goal ON (id=matchid) </br>
 The FROM clause says to merge data from the goal table with that from the game table. The ON says how to figure out which rows in game go with which rows in goal - the matchid from goal must match id from game. (If we wanted to be more clear/specific we could say
@@ -50,21 +50,29 @@ JOIN goal ON (id=matchid)
 WHERE player LIKE 'Mario%' ;
 
 ```
-
-
 </br>
 
+5.The table eteam gives details of every national team including the coach. You can JOIN goal to eteam using the phrase goal JOIN eteam on teamid=id </br>
+Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtime<=10
+```
+SELECT player, teamid, coach, gtime FROM goal 
+Join eteam ON id = teamid
+WHERE gtime<=10
+;
 
 ```
-
-```
-
-
 </br>
 
-
+6.
+To JOIN game with eteam you could use either
+game JOIN eteam ON (team1=eteam.id) or game JOIN eteam ON (team2=eteam.id)
+Notice that because id is a column name in both game and eteam you must specify eteam.id instead of just id </br>
+List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.
 ```
-
+SELECT mdate, teamname FROM game
+Join eteam ON eteam.id = game.team1
+WHERE coach =  'Fernando Santos'
+;
 ```
 
 </br>
