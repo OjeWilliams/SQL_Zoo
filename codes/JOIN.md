@@ -44,10 +44,10 @@ WHERE teamid = 'GER' ;
 
 4. Use the same JOIN as in the previous question. </br>
 Show the team1, team2 and player for every goal scored by a player called Mario player LIKE 'Mario%'
-
-`SELECT team1, team2, player FROM game 
+```
+SELECT team1, team2, player FROM game 
 JOIN goal ON (id=matchid)
-WHERE player LIKE 'Mario%' ;``
+WHERE player LIKE 'Mario%' ;
 
 ```
 
