@@ -92,25 +92,27 @@ SELECT DISTINCT(player) FROM game
 JOIN goal ON matchid = id 
 WHERE teamid != 'GER' and (team1='GER' OR team2='GER') ;
 ```
+</br>
 
+9.Show teamname and the total number of goals scored.
+
+```
+SELECT teamname, COUNT(matchid) FROM eteam 
+JOIN goal ON id=teamid
+GROUP BY (teamname) ;
+```
+</br>
+
+10.Show the stadium and the number of goals scored in each stadium.
+```
+SELECT stadium, COUNT(matchid) FROM game 
+JOIN goal ON id=matchid
+GROUP BY (stadium) ;
+```
 
 </br>
 
-
-```
-
-```
-
-
-</br>
-
-
-```
-
-```
-
-
-</br>
+11.For every match involving 'POL', show the matchid, date and the number of goals scored.
 
 ```
 
