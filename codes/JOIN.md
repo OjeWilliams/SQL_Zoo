@@ -121,21 +121,26 @@ WHERE (team1 = 'POL' OR team2 = 'POL')
 GROUP BY matchid, mdate
 ;
 
-```
-
-
-
 </br>
 
-
+12.For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'
 ```
-
+SELECT matchid,mdate, COUNT(*) FROM game 
+JOIN goal ON matchid = id 
+WHERE teamid = 'GER'
+GROUP BY matchid, mdate
+;
 ```
-
-
 </br>
 
+13.List every match with the goals scored by each team as shown. This will use "CASE WHEN" which has not been explained in any previous exercises.
+ Sort your result by mdate, matchid, team1 and team2.
 ```
-
-```
-
+SELECT mdate,team1,team2,
+  SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) AS score1,
+  SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) AS score2
+  FROM game JOIN goal ON matchid = id
+  GROUP BY mdate,team1, team2
+  ORDER BY mdate,team1, team2 DESC
+;
+``1
