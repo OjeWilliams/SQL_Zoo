@@ -120,7 +120,7 @@ JOIN goal ON matchid = id
 WHERE (team1 = 'POL' OR team2 = 'POL')
 GROUP BY matchid, mdate
 ;
-
+```
 </br>
 
 12.For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'
@@ -143,4 +143,4 @@ SELECT mdate,team1,team2,
   GROUP BY mdate,team1, team2
   ORDER BY mdate,team1, team2 DESC
 ;
-``1
+```
