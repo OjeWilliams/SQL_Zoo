@@ -82,19 +82,19 @@ SELECT * FROM nobel
 WHERE (subject = 'Medicine' AND yr < 1910) OR
 subject = 'Literature' AND yr >=2004 ;
 ```
-
 <br>
 
-
+11.Find all details of the prize won by PETER GRÜNBERG
 ```
-
+SELECT * FROM nobel
+WHERE winner LIKE 'Peter Gr%' ;
 ```
-
 <br>
 
-
+12.Find all details of the prize won by EUGENE O'NEILL
 ```
-
+SELECT * FROM nobel
+WHERE winner LIKE 'Eugene O%' ;
 ```
 
 <br>
