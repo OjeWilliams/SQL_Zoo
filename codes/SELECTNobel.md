@@ -96,19 +96,26 @@ WHERE winner LIKE 'Peter Gr%' ;
 SELECT * FROM nobel
 WHERE winner LIKE 'Eugene O%' ;
 ```
-
 <br>
 
-
+13.Knights in order <br>
+List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.
 ```
-
+SELECT winner, yr, subject FROM nobel 
+WHERE winner LIKE 'Sir%'
+ORDER BY yr DESC, winner ;
 ```
-
 <br>
 
-
+14.The expression subject IN ('Chemistry','Physics') can be used as a value - it will be 0 or 1. <br>
+Show the 1984 winners and subject ordered by subject and winner name; but list Chemistry and Physics last.
+```
+SELECT winner, subject FROM nobel
+WHERE yr = 1984
+ORDER BY 
+(CASE 
+WHEN subject IN ('Physics','Chemistry') Then 1 
+Else 0 
+END), subject,winner;
 ```
 
-```
-
-<br>
