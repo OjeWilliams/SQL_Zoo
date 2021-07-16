@@ -36,6 +36,7 @@ WHERE subject = 'Literature' AND
 yr BETWEEN 1980 and 1989;
 ```
 <br>
+
 6.Show all details of the presidential winners:
 -Theodore Roosevelt
 -Woodrow Wilson
