@@ -29,18 +29,32 @@ WHERE yr >= 2000 and subject='peace';
 ```
 <br>
 
+5.Show all details (yr, subject, winner) of the Literature prize winners for 1980 to 1989 inclusive.
 ```
+SELECT * FROM nobel 
+WHERE subject = 'Literature' AND
+yr BETWEEN 1980 and 1989;
 ```
-
+<br>
+6.Show all details of the presidential winners:
+-Theodore Roosevelt
+-Woodrow Wilson
+-Jimmy Carter
+-Barack Obama
+```
+SELECT * FROM nobel
+WHERE winner IN ('Theodore Roosevelt',
+                  'Woodrow Wilson',
+                  'Jimmy Carter',
+                  'Barack Obama') ;
+```
 <br>
 
+7.Show the winners with first name John
 ```
-```
+SELECT winner FROM nobel
+WHERE winner LIKE 'John%';
 
-<br>
-
-
-```
 ```
 
 <br>
