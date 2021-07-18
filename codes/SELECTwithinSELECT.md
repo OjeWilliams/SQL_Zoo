@@ -27,8 +27,16 @@ ORDER BY name
 ```
 <br>
 
+4.Which country has a population that is more than Canada but less than Poland? Show the name and the population.
 ```
-
+SELECT name, population FROMM world 
+WHERE population >
+(SELECT population FROM world
+WHERE name ='Canada') 
+AND
+population < (SELECT population FROM world
+WHERE name ='Poland') 
+;
 ```
 <br>
 
