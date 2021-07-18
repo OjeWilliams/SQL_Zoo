@@ -11,7 +11,9 @@ SELECT name FROM world
 
 2.Show the countries in Europe with a per capita GDP greater than 'United Kingdom'.
 ```
-
+SELECT name FROM world 
+WHERE continent = 'Europe' 
+AND gdp/population > (Select gdp/population from world where name = 'United Kingdom');
 ```
 <br>
 
