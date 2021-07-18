@@ -69,6 +69,7 @@ SELECT continent, name, area FROM world AS A
 ```
 <br>
 
+8.List each continent and the name of the country that comes first alphabetically.
 ```
 
 ```
