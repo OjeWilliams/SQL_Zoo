@@ -71,7 +71,10 @@ SELECT continent, name, area FROM world AS A
 
 8.List each continent and the name of the country that comes first alphabetically.
 ```
-
+SELECT continent, name FROM world AS A
+WHERE name <= ALL( SELECT name FROM world AS B
+                  WHERE A.continent = B.continent)
+;
 ```
 <br>
 
