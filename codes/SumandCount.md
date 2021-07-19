@@ -32,6 +32,7 @@ WHERE name IN ('Estonia', 'Latvia', 'Lithuania');
 ```
 <br>
 
+6.For each continent show the continent and number of countries.
 ```
 
 ```
