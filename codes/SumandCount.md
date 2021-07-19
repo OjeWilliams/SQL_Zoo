@@ -25,8 +25,10 @@ WHERE area >= 1000000 ;
 ```
 <br>
 
+5.What is the total population of ('Estonia', 'Latvia', 'Lithuania')
 ```
-
+SELECT SUM(population) FROM world
+WHERE name IN ('Estonia', 'Latvia', 'Lithuania');
 ```
 <br>
 
