@@ -5,8 +5,9 @@ FROM world;
 ```
 <br>
 
+2.List all the continents - just once each.
 ```
-
+SELECT continent FROM world;
 ```
 <br>
 
