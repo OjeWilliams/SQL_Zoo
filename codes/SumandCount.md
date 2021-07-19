@@ -62,7 +62,9 @@ WHERE (SELECT SUM(population) FROM world AS B WHERE
 A.continent = B.continent) >= 100000000
 GROUP BY continent;
 
--- This will return the countries and the population but they want just the countries the -- above will give just the countries
+-- This will return the countries and the population but they want just the countries the
+-- above will give just the countries
+
 SELECT continent, SUM(population) FROM world
 GROUP BY continent 
 HAVING SUM(population) > 100000000;
