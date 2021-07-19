@@ -45,7 +45,8 @@ SELECT continent, COUNT(name) FROM world
 WHERE population >= 10000000
 GROUP BY continent ;
 
--- Initially thought this would be correct but this first groups the countries by continent and returns continents which have more than a 100 million countries. i,e none lol
+-- Initially thought this would be correct but this first groups the countries by continent and returns 
+-- continents which have more than a 100 million countries. i,e none lol
 
 SELECT continent, COUNT(population) FROM world
 GROUP BY continent 
