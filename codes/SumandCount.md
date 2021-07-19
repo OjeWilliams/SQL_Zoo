@@ -57,6 +57,15 @@ HAVING COUNT(populations) >= 10000000;
 
 8.List the continents that have a total population of at least 100 million.
 ```
+SELECT continent FROM world as A
+WHERE (SELECT SUM(population) FROM world AS B WHERE
+A.continent = B.continent) >= 100000000
+GROUP BY continent;
+
+-- This will return the countries and the population but they want just the countries the -- above will give just the countries
+SELECT continent, SUM(population) FROM world
+GROUP BY continent 
+HAVING SUM(population) > 100000000;
 
 ```
 
