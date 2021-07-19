@@ -54,3 +54,10 @@ HAVING COUNT(populations) >= 10000000;
 
 ```
 <br>
+
+8.List the continents that have a total population of at least 100 million.
+```
+
+```
+
+
