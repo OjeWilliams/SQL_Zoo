@@ -6,9 +6,10 @@ SELECT id, title
 ```
 <br>
 
-2.List all the continents - just once each.
+2.Give year of 'Citizen Kane'.
 ```
-SELECT continent FROM world;
+SELECT yr FROM movie
+WHERE title = 'Citizen Kane';
 ```
 <br>
 
