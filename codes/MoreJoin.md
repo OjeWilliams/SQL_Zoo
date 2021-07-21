@@ -91,11 +91,16 @@ GROUP BY yr  HAVING COUNT(*) > 2 ;
 ```
 <br>
 
-8.List the films in which 'Harrison Ford' has appeared
+12.List the film title and the leading actor for all of the films 'Julie Andrews' played in.
 ```
-SELECT title FROM movie
+SELECT title, name FROM movie
 JOIN casting ON movie.id = movieid
 JOIN actor ON actor.id = casting.actorid
-WHERE name = 'Harrison Ford' ;
+WHERE movie.id IN
+(SELECT movie.id FROM movie
+        JOIN casting ON movie.id = movieid
+        JOIN actor ON actor.id = casting.actorid
+        WHERE actor.name = 'Julie Andrews')
+AND casting.ord = 1;
 
 
