@@ -117,12 +117,28 @@ ORDER BY name;
 ```
 <br>
 
-11.Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
+14.List the films released in the year 1978 ordered by the number of actors in the cast, then by title.
 ```
-SELECT yr, COUNT(*) FROM movie
+SELECT title, COUNT(actorid) FROM movie
 JOIN casting ON movie.id = movieid
 JOIN actor ON actor.id = casting.actorid
-WHERE name = 'Rock Hudson'
-GROUP BY yr  HAVING COUNT(*) > 2 ;
+WHERE yr = 1978
+GROUP BY title
+ORDER BY COUNT(actorid) DESC, title;
 
+```
+<br>
+
+15.List all the people who have worked with 'Art Garfunkel'.
+```
+SELECT name FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE movie.id IN
+(SELECT movie.id FROM movie
+        JOIN casting ON movie.id = movieid
+        JOIN actor ON actor.id = casting.actorid
+        WHERE actor.name = 'Art Garfunkel')
+AND actor.name != 'Art Garfunkel'
+;
 ```
