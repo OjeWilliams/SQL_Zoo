@@ -102,5 +102,27 @@ WHERE movie.id IN
         JOIN actor ON actor.id = casting.actorid
         WHERE actor.name = 'Julie Andrews')
 AND casting.ord = 1;
+```
 
+<br>
 
+13.Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles.
+```
+SELECT name FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE ord = 1
+GROUP BY name HAVING COUNT(ord) >= 15
+ORDER BY name;
+```
+<br>
+
+11.Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
+```
+SELECT yr, COUNT(*) FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE name = 'Rock Hudson'
+GROUP BY yr  HAVING COUNT(*) > 2 ;
+
+```
