@@ -80,12 +80,13 @@ WHERE ord = 1 AND yr = 1962;
 ```
 <br>
 
-7.btain the cast list for the film 'Alien'
+11.Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
 ```
-SELECT DISTINCT(name) FROM actor
-JOIN casting ON actor.id = actorid
-JOIN movie ON movie.id = movieid
-WHERE title = 'Alien';
+SELECT yr, COUNT(*) FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE name = 'Rock Hudson'
+GROUP BY yr  HAVING COUNT(*) > 2 ;
 
 ```
 <br>
