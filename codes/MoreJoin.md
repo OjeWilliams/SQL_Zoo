@@ -13,17 +13,18 @@ WHERE title = 'Citizen Kane';
 ```
 <br>
 
-3.Give the total GDP of Africa
+3.List all of the Star Trek movies, include the id, title and yr (all of these movies include the words Star Trek in the title). Order results by year.
 ```
-SELECT SUM(gdp) FROM world
-WHERE continent = 'Africa' ;
+SELECT id, title, yr FROM movie
+WHERE title LIKE 'Star Trek%'
+ORDER BY yr;
 ```
 <br>
 
-4.How many countries have an area of at least 1000000
+4.What id number does the actor 'Glenn Close' have?
 ```
-SELECT COUNT(name) FROM world
-WHERE area >= 1000000 ;
+SELECT id FROM actor
+WHERE name = 'Glenn Close';
 ```
 <br>
 
