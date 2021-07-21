@@ -44,18 +44,12 @@ WHERE movieid = 27;
 ```
 <br>
 
-7.For each continent show the continent and number of countries with populations of at least 10 million.
+7.btain the cast list for the film 'Alien'
 ```
-SELECT continent, COUNT(name) FROM world
-WHERE population >= 10000000
-GROUP BY continent ;
-
--- Initially thought this would be correct but this first groups the countries by continent and returns 
--- continents which have more than a 100 million countries. i,e none lol
-
-SELECT continent, COUNT(population) FROM world
-GROUP BY continent 
-HAVING COUNT(populations) >= 10000000;
+SELECT DISTINCT(name) FROM actor
+JOIN casting ON actor.id = actorid
+JOIN movie ON movie.id = movieid
+WHERE title = 'Alien';
 
 ```
 <br>
