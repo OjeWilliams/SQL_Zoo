@@ -28,17 +28,19 @@ WHERE name = 'Glenn Close';
 ```
 <br>
 
-5.What is the total population of ('Estonia', 'Latvia', 'Lithuania')
+5.What is the id of the film 'Casablanca'
 ```
-SELECT SUM(population) FROM world
-WHERE name IN ('Estonia', 'Latvia', 'Lithuania');
+SELECT id FROM movie
+WHERE title = 'Casablanca';
 ```
 <br>
 
-6.For each continent show the continent and number of countries.
+6.Obtain the cast list for 'Casablanca'. what is a cast list? <br>
+Use movieid=11768, (or whatever value you got from the previous question)
 ```
-SELECT continent, COUNT(name) FRom world
-GROUP BYcontinent ;
+SELECT name FROM casting
+JOIN actor ON casting.actorid = actor.id
+WHERE movieid = 27;
 ```
 <br>
 
