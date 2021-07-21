@@ -62,15 +62,16 @@ JOIN actor ON actor.id = casting.actorid
 WHERE name = 'Harrison Ford' ;
 ```
 
-5.What is the id of the film 'Casablanca'
+9.List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]
 ```
-SELECT id FROM movie
-WHERE title = 'Casablanca';
+SELECT title FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE name = 'Harrison Ford' AND ord != 1 ;
 ```
 <br>
 
-6.Obtain the cast list for 'Casablanca'. what is a cast list? <br>
-Use movieid=11768, (or whatever value you got from the previous question)
+10.List the films together with the leading star for all 1962 films.
 ```
 SELECT name FROM casting
 JOIN actor ON casting.actorid = actor.id
