@@ -61,6 +61,7 @@ JOIN casting ON movie.id = movieid
 JOIN actor ON actor.id = casting.actorid
 WHERE name = 'Harrison Ford' ;
 ```
+<br>
 
 9.List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]
 ```
