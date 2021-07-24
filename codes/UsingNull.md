@@ -38,8 +38,7 @@ FROM teacher ;
 ```
 <br>
 
-6.Obtain the cast list for 'Casablanca'. what is a cast list? <br>
-Use movieid=11768, (or whatever value you got from the previous question)
+6.Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string 'None' where there is no department.
 ```
 SELECT name FROM casting
 JOIN actor ON casting.actorid = actor.id
