@@ -72,12 +72,16 @@ FROM teacher;
 ```
 <br>
 
-10.List the films together with the leading star for all 1962 films.
+10.Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2, show 'Art' if the teacher's dept is 3 and 'None' otherwise.
 ```
-SELECT title, name FROM movie
-JOIN casting ON movie.id = movieid
-JOIN actor ON actor.id = casting.actorid
-WHERE ord = 1 AND yr = 1962;
+SELECT teacher.name,
+CASE
+     WHEN dept = 1 THEN 'Sci'
+     WHEN dept = 2 THEN 'Sci'
+     WHEN dept = 3 THEN 'Art'
+     ELSE 'None'
+END
+FROM teacher;
 ```
 <br>
 
