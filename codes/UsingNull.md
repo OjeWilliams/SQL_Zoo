@@ -1,17 +1,17 @@
 # Questions can be fount here https://sqlzoo.net/wiki/Using_Null
 
-1.List the films where the yr is 1962 [Show id, title]
+1.List the teachers who have NULL for their department.
 ```
-SELECT id, title
- FROM movie
- WHERE yr=1962 ;
+SELECT name FROM teacher 
+WHERE dept IS NULL ;
 ```
 <br>
 
-2.Give year of 'Citizen Kane'.
+2.Note the INNER JOIN misses the teachers with no department and the departments with no teacher.
 ```
-SELECT yr FROM movie
-WHERE title = 'Citizen Kane';
+SELECT teacher.name, dept.name
+ FROM teacher INNER JOIN dept
+           ON (teacher.dept=dept.id)
 ```
 <br>
 
