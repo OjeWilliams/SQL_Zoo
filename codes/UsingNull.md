@@ -52,12 +52,11 @@ SELECT COUNT(name), COUNT(mobile) FROM teacher;
 ```
 <br>
 
-8.List the films in which 'Harrison Ford' has appeared
+8.Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.
 ```
-SELECT title FROM movie
-JOIN casting ON movie.id = movieid
-JOIN actor ON actor.id = casting.actorid
-WHERE name = 'Harrison Ford' ;
+SELECT dept.name, COUNT(teacher.name) FROM teacher
+RIGHT JOIN dept on teacher.dept = dept.id 
+GROUP BY dept.name ;
 ```
 <br>
 
