@@ -45,12 +45,9 @@ LEFT JOIN dept ON teacher.dept = dept.id ;
 ```
 <br>
 
-7.btain the cast list for the film 'Alien'
+7.Use COUNT to show the number of teachers and the number of mobile phones.
 ```
-SELECT DISTINCT(name) FROM actor
-JOIN casting ON actor.id = actorid
-JOIN movie ON movie.id = movieid
-WHERE title = 'Alien';
+SELECT COUNT(name), COUNT(mobile) FROM teacher;
 
 ```
 <br>
