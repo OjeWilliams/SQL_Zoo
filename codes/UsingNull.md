@@ -23,10 +23,11 @@ SELECT teacher.name, dept.name
 ```
 <br>
 
-4.What id number does the actor 'Glenn Close' have?
+4.Use a different JOIN so that all departments are listed.
 ```
-SELECT id FROM actor
-WHERE name = 'Glenn Close';
+SELECT teacher.name, dept.name
+ FROM teacher RIGHT JOIN dept
+           ON (teacher.dept=dept.id) ;
 ```
 <br>
 
