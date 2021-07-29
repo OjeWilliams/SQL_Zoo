@@ -62,6 +62,8 @@ WHERE stopa.name='Haymarket' AND stopb.name='Leith';
 ```
 <br>
 
+
+8.Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross'
 ```
 
 ```
