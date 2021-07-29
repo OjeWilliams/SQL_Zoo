@@ -65,7 +65,12 @@ WHERE stopa.name='Haymarket' AND stopb.name='Leith';
 
 8.Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross'
 ```
-
+SELECT DISTINCT (a.company) , a.num FROM route AS a 
+JOIN route AS b ON
+  (a.company=b.company AND a.num=b.num)
+  JOIN stops stopa ON (a.stop=stopa.id)
+  JOIN stops stopb ON (b.stop=stopb.id)
+WHERE stopa.name='Craiglockhart' AND stopb.name='Tollcross'; 
 ```
 <br>
 
