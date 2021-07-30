@@ -1,4 +1,4 @@
-Questions can be found [here](https://sqlzoo.net/wiki/Self_join.
+Questions can be found [here](https://sqlzoo.net/wiki/Self_join].
 
 1.How many stops are in the database.
 ```
