@@ -1,4 +1,4 @@
-# Questions can be fount here https://sqlzoo.net/wiki/Using_Null
+Questions can be fount [here](https://sqlzoo.net/wiki/Using_Null).
 
 1.List the teachers who have NULL for their department.
 ```
