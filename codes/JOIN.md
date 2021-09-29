@@ -153,5 +153,5 @@ SELECT mdate,
   FROM game Left JOIN goal ON id = matchid
 Group by mdate,matchid,team1,team2
 Order by mdate,matchid,team1,team2
-
+;
 ```
