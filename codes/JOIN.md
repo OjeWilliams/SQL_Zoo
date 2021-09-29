@@ -136,10 +136,22 @@ GROUP BY matchid, mdate
 13.List every match with the goals scored by each team as shown. This will use "CASE WHEN" which has not been explained in any previous exercises.
  Sort your result by mdate, matchid, team1 and team2.
 ```
+-- This answer was 98% correct, but I noticed that the matches on the 24th and 27th both had no goals from either Team .. therefore the query needs a LEFT JOIN
 SELECT mdate,team1,SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) AS score1,
        team2,SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) AS score2
   FROM game JOIN goal ON matchid = id
   GROUP BY mdate,team1, team2
   ORDER BY mdate,team1, team2 DESC
 ;
+
+-- This answer is slightly modified and also correct
+SELECT mdate,
+  team1,
+  SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) score1, 
+  team2,
+  SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) score2
+  FROM game Left JOIN goal ON id = matchid
+Group by mdate,matchid,team1,team2
+Order by mdate,matchid,team1,team2
+
 ```
