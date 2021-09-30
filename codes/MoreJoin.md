@@ -105,6 +105,21 @@ WHERE movie.id IN
         JOIN actor ON actor.id = casting.actorid
         WHERE actor.name = 'Julie Andrews')
 AND casting.ord = 1;
+
+OR
+--Another solution
+SELECT title, name FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = casting.actorid
+WHERE movieid IN ( SELECT name, title FROM casting
+                   WHERE actorid = 179)
+                   AND ord = 1 ;
+
+
+
+
+
+
 ```
 
 <br>
